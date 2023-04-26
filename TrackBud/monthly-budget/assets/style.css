@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  #container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  #income, #bills, #display {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  
+  #income input, #bills input, #bills select {
+    margin: 5px;
+  }
+  
+  #bill-btn, #income-btn {
+    margin: 5px;
+  }
+  
+  #budget-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  #modal-title {
+    margin-top: 0;
+  }
+  
+  #modal-close-btn {
+    margin-top: 10px;
+  }
+  
