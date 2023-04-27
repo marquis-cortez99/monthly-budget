@@ -5,19 +5,28 @@
     <link rel="stylesheet" href="assets/style.css">
   </head>
   <body>
-    <h1>Budget Tracker</h1>
+    <header>
+      <h1>Budget Tracker</h1>
+    </header>
+
     <div id="container">
+
       <div id="income">
         <h2>Monthly Income</h2>
-        <input type="number" id="income-input" placeholder="Enter your monthly income">
-        <button id="income-btn">Add Income</button>
+        <input type="text" id="income-input" placeholder="Enter your budgeting amount">
+        <button id="income-btn">Add Budget</button>
+        <br></br>
       </div>
+
       <div id="bills">
         <h2>Bills</h2>
         <input type="text" id="bill-name" placeholder="Enter the name of your bill">
-        <input type="number" id="bill-amount" placeholder="Enter the amount of your bill">
+        <input type="text" id="bill-amount" placeholder="Enter the amount of your bill">
         <button id="bill-btn">Add Bill</button>
       </div>
+
+      <div id="box-break"></div>
+
       <div id="display">
         <h2>Monthly Budget</h2>
         <ul id="budget-list">
@@ -25,6 +34,7 @@
           <li>Total Bills: $0</li>
           <li>Extra Income: $0</li>
         </ul>
+        <br></br>
         <h2>Annual Expenses</h2>
         <p id="annual-expenses">No data to display</p>
       </div>
