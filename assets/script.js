@@ -12,6 +12,8 @@ const modalTitle = document.getElementById("modal-title");
 const modalText = document.getElementById("modal-text");
 const modalCloseBtn = document.getElementById("modal-close-btn");
 
+const billList = document.getElementById("bill-list");
+
 // Set up initial variables
 let monthlyIncome = 0;
 let totalBills = 0;
@@ -42,8 +44,9 @@ function addBill() {
     totalBills += billAmount;
     updateBudget();
     const billItem = document.createElement("li");
-    billItem.textContent = `${billName}: $${billAmount}`;
-    budgetList.appendChild(billItem);
+    billItem.setAttribute("id","billList-item");
+    billItem.textContent = `${billName} - $${billAmount}`;
+    billList.appendChild(billItem);
   } else {
     showModal("Invalid Input", "Please enter a valid bill name and amount.");
   }
@@ -82,8 +85,6 @@ function startOver() {
   budgetList.children[0].textContent = "Income: $0";
   budgetList.children[1].textContent = "Total Bills: $0";
   budgetList.children[2].textContent = "Extra Income: $0";
-  while (budgetList.children.length > 3) {
-    budgetList.removeChild(budgetList.lastChild);
-  }
+  
   annualExpenses.textContent = "0.00";
 }

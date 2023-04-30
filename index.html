@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>TrackBud</h1>
+
     <div id="container">
       <div id="income">
         <h2>Monthly Income</h2>
@@ -19,15 +20,25 @@
         <input type="number" id="bill-amount" placeholder="Enter the amount of your bill">
         <button id="bill-btn">Add Bill</button>
       </div>
+
       <div id="display">
-        <h2>Monthly Budget</h2>
-        <ul id="budget-list">
-          <li>Income: $0</li>
-          <li>Total Bills: $0</li>
-          <li>Extra Income: $0</li>
-        </ul>
-        <h2>Annual Expenses</h2>
-        <div id="annual-expenses">0.00</div>
+        <div id="finance-section">
+          <h2>Monthly Budget</h2>
+          <ul id="budget-list">
+            <li>Income: $0</li>
+            <li>Total Bills: $0</li>
+            <li>Extra Income: $0</li>
+          </ul>
+          <h2>Annual Expenses</h2>
+          <div id="annual-expenses">0.00</div>
+        </div>
+
+        <!--Added another div to separate the two sections-->
+        <div id="bill-list">
+          <h2>Bills List</h2>
+          
+        </div>
+        
       </div>
     </div>
 
