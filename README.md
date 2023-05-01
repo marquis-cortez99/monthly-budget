@@ -20,7 +20,7 @@ The following technologies were used to develop the TrackBud web application:
 * HTML: Used to create the structure of the web application.
 * CSS: Used to style the web application and make it visually appealing.
 * JavaScript: Used to create the interactive elements of the web application.
-* Bootstrap: Used to simplify the layout and design of the web application.
+* Bulma: Used to simplify the layout and design of the web application.
 * Emoji API: Used to display emojis as motivation when users reach certain savings goal milestones.
 
 Getting Started
