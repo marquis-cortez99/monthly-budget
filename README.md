@@ -33,9 +33,9 @@ Team Members
 The following are the members who worked on the monthly budgeting web application:
 * Marquis Cortez
 * John Guerrero
-* Christophe
+* Christophe Wattigny
 * Eric Lavallee
-* Ryan
+* Ryan Anderson
 
 Acknowledgements
 We would like to thank our professor for providing us with the opportunity to develop this monthly budgeting web application. Also we would like to thank the developers of the technologies we used in the development of the web application.
