@@ -43,6 +43,14 @@ function addBill() {
     updateBudget();
     const billItem = document.createElement("li");
     billItem.textContent = `${billName}: $${billAmount}`;
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.addEventListener("click", () => {
+      totalBills -= billAmount;
+      updateBudget();
+      budgetList.removeChild(billItem);
+    });
+    billItem.appendChild(removeBtn);
     budgetList.appendChild(billItem);
   } else {
     showModal("Invalid Input", "Please enter a valid bill name and amount.");
@@ -50,6 +58,7 @@ function addBill() {
   billNameInput.value = "";
   billAmountInput.value = "";
 }
+
 
 // updateBudget function
 function updateBudget() {

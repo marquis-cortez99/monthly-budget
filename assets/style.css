@@ -73,6 +73,17 @@ body {
   button:hover {
   background-color: #0080ff;
   }
+  #budget {
+    flex-basis: calc(50% - 1rem);
+    margin-bottom: 2rem;
+  }
+  
+  .budget-container {
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+    padding: 2rem;
+  }
   
   /* Budget list */
   #budget-list {
