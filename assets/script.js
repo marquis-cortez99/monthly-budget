@@ -12,6 +12,7 @@ const modalTitle = document.getElementById("modal-title");
 const modalText = document.getElementById("modal-text");
 const modalCloseBtn = document.getElementById("modal-close-btn");
 
+// Added new const for bill list div
 const billList = document.getElementById("bill-list");
 
 // Set up initial variables
@@ -36,20 +37,45 @@ function addIncome() {
   incomeInput.value = "";
 }
 
+
+
 // Define the addBill function
 function addBill() {
   const billName = billNameInput.value.trim();
   const billAmount = Number(billAmountInput.value);
+
   if (billName !== "" && !isNaN(billAmount) && billAmount > 0) {
     totalBills += billAmount;
     updateBudget();
+
+    //added removable bill
     const billItem = document.createElement("li");
-    billItem.setAttribute("id","billList-item");
+    billItem.style.listStyleType = "none";
+    billItem.style.display = "inline-flex";
+    billItem.style.flexWrap = "wrap";
+    billItem.style.margin = "5px";
+    billItem.style.width = "100%";
     billItem.textContent = `${billName} - $${billAmount}`;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.style.height = "35px";
+    removeBtn.style.paddingBottom = "30px";
+
+    removeBtn.addEventListener("click", () => {
+      totalBills -= billAmount;
+      updateBudget();
+      billList.removeChild(billItem);
+    });
+    //end removable bill
+
+    billItem.appendChild(removeBtn);
     billList.appendChild(billItem);
+
   } else {
     showModal("Invalid Input", "Please enter a valid bill name and amount.");
   }
+
   billNameInput.value = "";
   billAmountInput.value = "";
 }
@@ -85,6 +111,9 @@ function startOver() {
   budgetList.children[0].textContent = "Income: $0";
   budgetList.children[1].textContent = "Total Bills: $0";
   budgetList.children[2].textContent = "Extra Income: $0";
+  while (billList.children.length > 1) {
+    billList.removeChild(billList.lastChild);
+  }
   
   annualExpenses.textContent = "0.00";
 }
