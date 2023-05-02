@@ -20,7 +20,7 @@ The following technologies were used to develop the TrackBud web application:
 * HTML: Used to create the structure of the web application.
 * CSS: Used to style the web application and make it visually appealing.
 * JavaScript: Used to create the interactive elements of the web application.
-* Bootstrap: Used to simplify the layout and design of the web application.
+* Bulma: Used to simplify the layout and design of the web application.
 * Emoji API: Used to display emojis as motivation when users reach certain savings goal milestones.
 
 Getting Started
@@ -33,9 +33,9 @@ Team Members
 The following are the members who worked on the monthly budgeting web application:
 * Marquis Cortez
 * John Guerrero
-* Christophe
+* Christophe Wattigny
 * Eric Lavallee
-* Ryan
+* Ryan Anderson
 
 Acknowledgements
 We would like to thank our professor for providing us with the opportunity to develop this monthly budgeting web application. Also we would like to thank the developers of the technologies we used in the development of the web application.
