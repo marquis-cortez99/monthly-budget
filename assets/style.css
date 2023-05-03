@@ -24,7 +24,7 @@ body {
   }
   
 .header-title {
- text-shadow: 5px 5px #0080ff;
+text-shadow: 5px 5px #0080ff;
   margin: 0;
   padding: 1rem;
   color: white;
@@ -153,3 +153,13 @@ body {
   border-radius: 0.25rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
   }
+  
+footer {
+  display: flex;
+  align-items: center;
+  background-color: #00bfff;
+  border-bottom: 12px solid #0080ff;
+  font-family:'Bebas Neue', cursive; 
+  font-size: 8rem;
+  width: 100%;
+}
