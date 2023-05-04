@@ -112,7 +112,19 @@ function subtractSavings() {
 function updateProgressBar() {
   const progressPercent = (currentSavings / savingsGoal) * 100 || 0;
   progressBar.style.width = `${progressPercent}%`;
+
+  if (progressPercent === 100) {
+    progressBar.classList.add('full');
+  } else {
+    progressBar.classList.remove('full');
+  }
 }
+
+
+
+
+
+
 
 function resetSavingsGoal() {
   savingsGoal = 0;
