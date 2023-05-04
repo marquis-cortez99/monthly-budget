@@ -1,71 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TrackBud</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
-</head>
-
-
-<body>
-
-  <div id="header">
-    <img src="TrackBud_logo.jpg" class="logo">
-    <h1 class="header-title">TrackBud</h1>
-
-    <p id="joke-text">Fetching joke...</p>
-  </div>
-  </div>
-
-
-
-  <div id="container">
-    <div id="income">
-      <h2>Monthly Income</h2>
-      <input type="number" id="income-input" placeholder="Enter your monthly income">
-      <button id="income-btn">Add Income</button>
-    </div>
-    <div id="bills">
-      <h2>Bills</h2>
-      <input type="text" id="bill-name" placeholder="Enter the name of your bill">
-      <input type="number" id="bill-amount" placeholder="Enter the amount of your bill">
-      <button id="bill-btn">Add Bill</button>
-    </div>
-    <div id="budget">
-
-      <div class="budget-container">
+  <head>
+    <title>TrackBud</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+    <h1>TrackBud</h1>
+    <div id="container">
+      <div id="income">
+        <h2>Monthly Income</h2>
+        <input type="number" id="income-input" placeholder="Enter your monthly income">
+        <button id="income-btn">Add Income</button>
+      </div>
+      <div id="bills">
+        <h2>Bills</h2>
+        <input type="text" id="bill-name" placeholder="Enter the name of your bill">
+        <input type="number" id="bill-amount" placeholder="Enter the amount of your bill">
+        <button id="bill-btn">Add Bill</button>
+      </div>
+      <div id="display">
         <h2>Monthly Budget</h2>
         <ul id="budget-list">
           <li>Income: $0</li>
           <li>Total Bills: $0</li>
           <li>Extra Income: $0</li>
         </ul>
+        <h2>Annual Expenses</h2>
+        <div id="annual-expenses">0.00</div>
+      </div>
+
+      <!--Added another div to separate the two sections-->
+      <div id="bill-list">
+        <h2>Bills List</h2>
+      </div>
+      <!--Added another div to separate the two sections-->
+      <div id="bill-list">
+        <h2>Bills List</h2>
       </div>
     </div>
-    <div id="annual-expenses">
-      <h2>Annual Expenses</h2>
-      <div id="annual-expenses-value">0.00</div>
-    </div>
-    <form id="currency-container">
-      <h2>Currency Converter</h2>
-      <label for="fromCurrency">From currency:</label>
-      <input type="text" id="fromCurrency" value="USD"><br>
-      <label for="toCurrency">To currency:</label>
-      <input type="text" id="toCurrency" value="EUR"><br>
-      <label for="amount">Amount:</label>
-      <input type="number" id="amount" value="100"><br>
-      <button type="submit">Convert</button>
-      <div id="result"></div>
-    </form>
-
   </div>
+
+  <form id="currency-container">
+    <h2>Currency Converter</h2>
+    <label for="fromCurrency">From currency:</label>
+    <input type="text" id="fromCurrency" value="USD"><br>
+    <label for="toCurrency">To currency:</label>
+    <input type="text" id="toCurrency" value="EUR"><br>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" value="100"><br>
+    <button type="submit">Convert</button>
+    <div id="result"></div>
+    <p id="joke-text">Fetching joke...</p>
+  </form>
 
 
   <footer>

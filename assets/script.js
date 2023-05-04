@@ -1,4 +1,4 @@
-// Get all the necessary HTML elements
+
 const incomeInput = document.getElementById("income-input");
 const incomeBtn = document.getElementById("income-btn");
 const billNameInput = document.getElementById("bill-name");
@@ -11,18 +11,21 @@ const modalContainer = document.getElementById("modal-container");
 const modalTitle = document.getElementById("modal-title");
 const modalText = document.getElementById("modal-text");
 const modalCloseBtn = document.getElementById("modal-close-btn");
+const billList = document.getElementById("bill-list");
 
-// Set up initial variables
+
+
 let monthlyIncome = 0;
 let totalBills = 0;
 let extraIncome = 0;
 let annualExpensesArray = [];
 
-// Set up event listeners for the income and bill buttons
+
+
 incomeBtn.addEventListener("click", addIncome);
 billBtn.addEventListener("click", addBill);
 
-// Define the addIncome function
+
 function addIncome() {
   const incomeAmount = Number(incomeInput.value);
   if (!isNaN(incomeAmount) && incomeAmount > 0) {
@@ -34,33 +37,6 @@ function addIncome() {
   incomeInput.value = "";
 }
 
-// Define the addBill function
-function addBill() {
-  const billName = billNameInput.value.trim();
-  const billAmount = Number(billAmountInput.value);
-  if (billName !== "" && !isNaN(billAmount) && billAmount > 0) {
-    totalBills += billAmount;
-    updateBudget();
-    const billItem = document.createElement("li");
-    billItem.textContent = `${billName}: $${billAmount}`;
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
-    removeBtn.addEventListener("click", () => {
-      totalBills -= billAmount;
-      updateBudget();
-      budgetList.removeChild(billItem);
-    });
-    billItem.appendChild(removeBtn);
-    budgetList.appendChild(billItem);
-  } else {
-    showModal("Invalid Input", "Please enter a valid bill name and amount.");
-  }
-  billNameInput.value = "";
-  billAmountInput.value = "";
-}
-
-
-// updateBudget function
 function updateBudget() {
   const extraIncome = monthlyIncome - totalBills;
   const incomeItem = budgetList.children[0];
@@ -79,10 +55,9 @@ function updateBudget() {
 }
 
 
-// Event listener for the start over button
+
 startOverBtn.addEventListener("click", startOver);
 
-// Define the startOver function
 function startOver() {
   monthlyIncome = 0;
   totalBills = 0;
@@ -91,8 +66,107 @@ function startOver() {
   budgetList.children[0].textContent = "Income: $0";
   budgetList.children[1].textContent = "Total Bills: $0";
   budgetList.children[2].textContent = "Extra Income: $0";
-  while (budgetList.children.length > 3) {
-    budgetList.removeChild(budgetList.lastChild);
+  while (billList.children.length > 1) {
+    billList.removeChild(billList.lastChild);
   }
+  
   annualExpenses.textContent = "0.00";
 }
+
+let savingsGoal = 0;
+let currentSavings = 0;
+const savingsList = document.getElementById("savingsList");
+const savingsGoalDisplay = document.getElementById("savingsGoalDisplay");
+const progressBar = document.getElementById("progressBar");
+
+function setSavingsGoal() {
+  const goalInput = document.getElementById("savingsGoal");
+  savingsGoal = parseInt(goalInput.value);
+  goalInput.value = "";
+  savingsGoalDisplay.textContent = `Savings Goal: $${savingsGoal}`;
+  updateProgressBar();
+}
+
+function addSavings() {
+  const addInput = document.getElementById("addInput");
+  const savings = parseInt(addInput.value);
+  addInput.value = "";
+  currentSavings += savings;
+  savingsList.innerHTML += `<li>$${savings} added</li>`;
+  updateProgressBar();
+}
+
+function subtractSavings() {
+  const subtractInput = document.getElementById("subtractInput");
+  const savings = parseInt(subtractInput.value);
+  subtractInput.value = "";
+  if (savings <= currentSavings) {
+    currentSavings -= savings;
+    savingsList.innerHTML += `<li>$${savings} removed</li>`;
+  } else {
+    savingsList.innerHTML += `<li>Attempted to remove $${savings}, but only $${currentSavings} available</li>`;
+  }
+  updateProgressBar();
+}
+
+function updateProgressBar() {
+  const progressPercent = (currentSavings / savingsGoal) * 100 || 0;
+  progressBar.style.width = `${progressPercent}%`;
+}
+
+function resetSavingsGoal() {
+  savingsGoal = 0;
+  currentSavings = 0;
+  savingsList.innerHTML = "";
+  savingsGoalDisplay.textContent = "Savings Goal: ";
+  updateProgressBar();
+}
+
+document.getElementById("setGoalButton").addEventListener("click", setSavingsGoal);
+document.getElementById("addButton").addEventListener("click", addSavings);
+document.getElementById("subtractButton").addEventListener("click", subtractSavings);
+document.getElementById("resetButton").addEventListener("click", resetSavingsGoal);
+
+function addBill() {
+  const billName = billNameInput.value.trim();
+  const billAmount = Number(billAmountInput.value);
+
+  if (billName !== "" && !isNaN(billAmount) && billAmount > 0) {
+    totalBills += billAmount;
+    updateBudget();
+
+    //added removable bill
+    const billItem = document.createElement("li");
+    billItem.style.listStyleType = "none";
+    billItem.style.display = "inline-flex";
+    billItem.style.flexWrap = "wrap";
+    billItem.style.margin = "5px";
+    billItem.style.width = "100%";
+    billItem.textContent = `${billName} - $${billAmount}`;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.style.height = "35px";
+    removeBtn.style.paddingBottom = "30px";
+
+    removeBtn.addEventListener("click", () => {
+      totalBills -= billAmount;
+      updateBudget();
+      billList.removeChild(billItem);
+    });
+    //end removable bill
+
+    billItem.appendChild(removeBtn);
+    billList.appendChild(billItem);
+
+  } else {
+    showModal("Invalid Input", "Please enter a valid bill name and amount.");
+  }
+
+  billNameInput.value = "";
+  billAmountInput.value = "";
+}
+
+
+
+

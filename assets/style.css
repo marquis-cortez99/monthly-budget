@@ -31,19 +31,19 @@ body {
   color: white;
   text-align: center;
   font-weight: 500;
-  ;
-
 }
+
+
 
 
 /* Main container */
 #container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1rem;
+  padding: .5rem;
   font-size: 2rem;
 }
 
@@ -59,19 +59,6 @@ body {
   border-color: #00bfff;
 }
 
-#currency-container {
-  flex-basis: calc(50% - 1rem);
-  margin-bottom: 2rem;
-  padding: 2rem;
-  float: right;
-  background-color: #fff;
-  box-shadow: 0 0.25rem 0.5rem #00bfff;
-  border-radius: 1rem;
-  border-color: #00bfff;
-  font-size: 2rem;
-  position: ;
-}
-
 /* Form inputs */
 #income-input,
 #bill-name,
@@ -85,6 +72,8 @@ body {
   font-size: 1rem;
 }
 
+;
+
 #bill-amount:focus,
 #income-input:focus,
 #bill-name:focus {
@@ -92,23 +81,6 @@ body {
   border-color: #00bfff;
 }
 
-/* Buttons */
-button {
-  display: block;
-  width: 100%;
-  padding: 0.5rem;
-  background-color: #00bfff;
-  color: white;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  font-size: 1rem;
-}
-
-button:hover {
-  background-color: #0080ff;
-}
 
 #budget {
   flex-basis: calc(50% - 1rem);
@@ -140,6 +112,35 @@ button:hover {
   font-size: 1rem;
 }
 
+#display {
+  display: inline-flex;
+  flex-basis: calc(50% - 1rem);
+  flex-grow: 1;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  margin-left: 20px;
+}
+
+#display h2 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#finance-section {
+  width: 50%;
+  padding: 10px;
+}
+
+#bill-list {
+  width: 50%;
+  padding: 5px;
+  border-left: 2px solid black;
+}
+
+
 /* Annual expenses container */
 #annual-expenses {
   margin-bottom: 2rem;
@@ -147,26 +148,6 @@ button:hover {
   background-color: #fff;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
-}
-
-/* Modal styles */
-.modal-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -177,4 +158,83 @@ footer {
   font-family: 'Bebas Neue', cursive;
   font-size: 8rem;
   width: 100%;
+}
+
+#growth {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.5rem #00bfff;
+  border-radius: 1rem;
+  border-color: #00bfff;
+  align-self: flex-start;
+  font-size: large;
+  width: 3000px;
+}
+
+#growth-left {
+  height: auto;
+}
+
+#growth-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+#growth button {
+  width: 100px;
+}
+
+.progress {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #000;
+  margin-top: auto;
+}
+
+.progress-bar {
+  height: 100%;
+  background-image: repeating-linear-gradient(to left,
+      #00bfff,
+      #1172f9,
+      #0546e0);
+  width: 0%;
+  box-sizing: border-box;
+
+}
+
+
+
+#currency-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: .5rem;
+  font-size: 1rem;
+  box-shadow: 0 0.25rem 0.5rem #00bfff;
+  border-radius: 1rem;
+  border-color: #00bfff;
+}
+button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #0080ff;
 }
