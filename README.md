@@ -3,7 +3,6 @@ Monthly Budgeting Web Application - TrackBud
 
 “TrackBud is an innovative web application designed to help individuals manage their personal finances with ease and efficiency. The platform offers a user-friendly interface that allows users to track their monthly income, expenses, and savings, all in one place.”
 
-Features
 The following are the features of the TrackBud web application.
 
 * Expense Tracking: Users can input their expenses into the application and track them by category (e.g. rent, groceries, entertainment, etc.). The application calculates the total amount spent on each category and provides a visual representation of the data.
@@ -16,7 +15,6 @@ The following are the features of the TrackBud web application.
 
 * Currency Converter API: Allows the user to calculate the amount of money they would have in other currencies.
 
-Technologies Used
 The following technologies were used to develop the TrackBud web application:
 * HTML: Used to create the structure of the web application.
 * CSS: Used to style the web application and make it visually appealing.
@@ -24,14 +22,14 @@ The following technologies were used to develop the TrackBud web application:
 * Bulma: Used to simplify the layout and design of the web application.
 * Currency Converter API: Allows the user to calculate the amount of money they would have in other currencies.
 
-Getting Started
+
 To use the monthly budgeting web application, follow these steps:
 1. Open TrackBud your web browser.
 2. Input your expenses, income, and savings goals into the application.
 3. Use the dashboard to track your expenses, income, view how much your monthly bills equal to annually so you can anticipate your expenses for the entire year, view the progress towards your savings goals and be able to calculate the amount of money you would have in other currencies.
 
 
-Team Members
+
 The following are the members who worked on the monthly budgeting web application:
 * Marquis Cortez
 * John Guerrero
