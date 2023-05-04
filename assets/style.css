@@ -205,19 +205,22 @@ footer {
       #0546e0);
   width: 0%;
   box-sizing: border-box;
+
 }
 
 
 
 #currency-container {
-  flex-basis: calc(50% - 1rem);
-  margin-bottom: 2rem;
-  padding: 2rem;
-  background-color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: .5rem;
+  font-size: 1rem;
   box-shadow: 0 0.25rem 0.5rem #00bfff;
   border-radius: 1rem;
   border-color: #00bfff;
-  align-self: flex-start;
 }
 button {
   display: block;
