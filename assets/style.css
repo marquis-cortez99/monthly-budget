@@ -205,8 +205,15 @@ footer {
       #0546e0);
   width: 0%;
   box-sizing: border-box;
+  transition: width 0.5s;
 
 }
+
+.progress-bar.full {
+  border: 10px outset gold;
+}
+
+
 
 
 
