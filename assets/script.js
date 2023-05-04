@@ -112,7 +112,6 @@ function subtractSavings() {
 function updateProgressBar() {
   const progressPercent = (currentSavings / savingsGoal) * 100 || 0;
   progressBar.style.width = `${progressPercent}%`;
-  progressBar.textContent = `${progressPercent.toFixed(2)}%`;
 }
 
 function resetSavingsGoal() {
