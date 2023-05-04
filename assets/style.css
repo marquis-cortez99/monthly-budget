@@ -1,45 +1,68 @@
 body {
   font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
+  font-size: 16px;
   padding: 0;
   background-color: #f5f5f5;
-  }
-  
-  h1 {
-  font-size: 2.5rem;
+
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  background-color: #00bfff;
+  border-bottom: 12px solid #0080ff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 8rem;
+}
+
+.logo {
+  max-width: 10rem;
+  max-height: 10rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  box-shadow: 4px 4px #0080ff;
+}
+
+.header-title {
+  text-shadow: 5px 5px #0080ff;
   margin: 0;
   padding: 1rem;
-  background-color: #00bfff;
   color: white;
   text-align: center;
-  border-bottom: 5px solid #0080ff;
-  }
-  
-  /* Main container */
-  #container {
-  max-width: 800px;
+  font-weight: 500;
+}
+
+
+
+
+/* Main container */
+#container {
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1rem;
-  }
-  
-  /* Income and bills containers */
-  #income,
-  #bills {
+  padding: .5rem;
+  font-size: 2rem;
+}
+
+/* Income and bills containers */
+#income,
+#bills {
   flex-basis: calc(50% - 1rem);
   margin-bottom: 2rem;
   padding: 2rem;
   background-color: #fff;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
-  border-radius: 0.25rem;
-  }
-  
-  /* Form inputs */
-  #income-input,
-  #bill-name,
-  #bill-amount {
+  box-shadow: 0 0.25rem 0.5rem #00bfff;
+  border-radius: 1rem;
+  border-color: #00bfff;
+}
+
+/* Form inputs */
+#income-input,
+#bill-name,
+#bill-amount {
   display: block;
   width: 100%;
   padding: 0.5rem;
@@ -47,17 +70,21 @@ body {
   border: 1px solid #ccc;
   border-radius: 0.25rem;
   font-size: 1rem;
-  }
-  
-  #bill-amount:focus,
-  #income-input:focus,
-  #bill-name:focus {
+}
+
+;
+
+#bill-amount:focus,
+#income-input:focus,
+#bill-name:focus {
   outline: none;
   border-color: #00bfff;
-  }
-  
-  /* Buttons */
-  button {
+}
+
+;
+
+/* Buttons */
+button {
   display: block;
   width: 100%;
   padding: 0.5rem;
@@ -68,20 +95,32 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
   font-size: 1rem;
-  }
-  
-  button:hover {
+}
+
+button:hover {
   background-color: #0080ff;
-  }
-  
-  /* Budget list */
-  #budget-list {
+}
+
+#budget {
+  flex-basis: calc(50% - 1rem);
+  margin-bottom: 2rem;
+}
+
+.budget-container {
+  background-color: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  padding: 2rem;
+}
+
+/* Budget list */
+#budget-list {
   margin: 0;
   padding: 0;
   list-style: none;
-  }
-  
-  #budget-list li {
+}
+
+#budget-list li {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
   background-color: #fff;
@@ -90,33 +129,96 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
-  }
-  
-  /* Annual expenses container */
-  #annual-expenses {
+}
+
+#display {
+  display: inline-flex;
+  flex-basis: calc(50% - 1rem);
+  flex-grow: 1;
   margin-bottom: 2rem;
   padding: 2rem;
   background-color: #fff;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
-  }
-  
-  /* Modal styles */
-  .modal-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  }
-  
-  .modal {
-  background-color: #fff;
+  margin-left: 32px;
+}
+
+#display h2 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#finance-section {
+  width: 50%;
+  padding: 10px;
+}
+
+#bill-list {
+  width: 50%;
+  padding: 5px;
+  border-left: 2px solid black;
+}
+
+
+/* Annual expenses container */
+#annual-expenses {
+  margin-bottom: 2rem;
   padding: 2rem;
-  border-radius: 0.25rem;
+  background-color: #fff;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
-  }
+  border-radius: 0.25rem;
+}
+
+;
+
+
+footer {
+  display: flex;
+  align-items: center;
+  background-color: #00bfff;
+  border-bottom: 12px solid #0080ff;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 8rem;
+  width: 100%;
+}
+
+.progress {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #000;
+}
+
+.progress-bar {
+  height: 100%;
+  background-image: repeating-linear-gradient(to left,
+      #00bfff,
+      #1172f9,
+      #0546e0);
+  width: 20%;
+}
+
+#growth {
+  flex-basis: calc(50% - 1rem);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.5rem #00bfff;
+  border-radius: 1rem;
+  border-color: #00bfff;
+  align-self: flex-start;
+}
+
+#growth button {
+  width: 100px;
+}
+
+#currency-container {
+  flex-basis: calc(50% - 1rem);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.5rem #00bfff;
+  border-radius: 1rem;
+  border-color: #00bfff;
+  align-self: flex-start;
+}
