@@ -19,26 +19,30 @@
 
   <div id="container">
     <div id="growth">
-      <label for="savingsGoal">Savings Goal:</label>
-      <input type="number" id="savingsGoal" placeholder="Enter savings goal">
-      <button id="setGoalButton">Set Goal</button>
+      <div id="growth-left">
+        <label for="savingsGoal">Savings Goal:</label>
+        <input type="number" id="savingsGoal" placeholder="Enter savings goal">
+        <button id="setGoalButton">Set Goal</button>
 
-      <label for="addInput">Add to savings:</label>
-      <input type="number" id="addInput" placeholder="Enter amount">
-      <button id="addButton">Add</button>
+        <label for="addInput">Add to savings:</label>
+        <input type="number" id="addInput" placeholder="Enter amount">
+        <button id="addButton">Add</button>
 
-      <label for="subtractInput">Remove from savings:</label>
-      <input type="number" id="subtractInput" placeholder="Enter amount">
-      <button id="subtractButton">Remove</button>
-
-      <h3>Savings Breakdown</h3>
-      <p id="savingsGoalDisplay"></p>
-      <ul id="savingsList"></ul>
-
-      <div class="progress">
-        <div id="progressBar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        <label for="subtractInput">Remove from savings:</label>
+        <input type="number" id="subtractInput" placeholder="Enter amount">
+        <button id="subtractButton">Remove</button>
+        <button id="resetButton">Reset Goal</button>
+    
       </div>
-      <button id="resetButton">Reset Goal</button>
+      <div id="growth-right">
+        <h3>Savings Breakdown</h3>
+        <p id="savingsGoalDisplay"></p>
+        <ul id="savingsList"></ul>
+ 
+        <div class="progress">
+          <div id="progressBar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
     </div>
     <div id="income">
       <h2>Monthly Income</h2>
@@ -82,6 +86,7 @@
     <input type="number" id="amount" value="100"><br>
     <button type="submit">Convert</button>
     <div id="result"></div>
+    <p id="joke-text">Fetching joke...</p>
   </form>
 
 
